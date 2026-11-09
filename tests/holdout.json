@@ -1,0 +1,18 @@
+[
+  ["What comes first on my turn: swapping cards or putting down a road?", "turn", 4],
+  ["In the beginner setup is the opening player chosen by age?", "starting-hand", 13],
+  ["Who earns cards from a roll besides the person throwing the dice?", "production", 10],
+  ["May I put a settlement on the intersection immediately next to yours?", "settlement", 5],
+  ["Can the bank trade at 3:1 if my city is on the ordinary harbor?", "harbor", 4],
+  ["Will a forest give lumber while the robber sits on that forest?", "robber", 11],
+  ["Only I am due a resource but the bank can't cover the whole payout. What do I get?", "shortage", 10],
+  ["Who makes the first move on our variable board?", "opening", 12],
+  ["Can we use a second robber to block two number tokens at once?", null, null],
+  ["Do I use these port rates in Catan Junior?", null, null],
+  ["We haven't picked a map yet. Who should go first?", null, null],
+  ["How much is the toll in dollars for trading at a generic port?", null, null],
+  ["If the supply is short, do official tournaments let us use an IOU as collateral?", null, null],
+  ["Do two settlements have to be a certain number of inches apart?", null, null],
+  ["Can a Pirate attack move the robber off my pasture?", null, null],
+  ["Is the ink on the starter board safe to wash?", null, null]
+]

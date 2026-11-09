@@ -1,0 +1,441 @@
+[
+  {
+    "id": "players",
+    "title": "Player count",
+    "page": 0,
+    "start": "",
+    "end": "",
+    "answer": "The CATAN base game is for 3–4 players. The 5–6 player extension has its own rules.",
+    "queries": [
+      "How many people can play?",
+      "Minimum and maximum number of players",
+      "Can two three four five or six of us play the base game?",
+      "We have five people at the table. Will everyone fit?",
+      "What size group is this for?"
+    ]
+  },
+  {
+    "id": "win",
+    "title": "Ending the game",
+    "page": 5,
+    "start": "If you have 10 or more",
+    "end": "points on their turn.",
+    "answer": "You win immediately if you have at least 10 victory points on your own turn. Reaching 10 on someone else’s turn doesn’t end the game; you must still have 10 when your turn comes around.",
+    "queries": [
+      "How do you win? What is the objective?",
+      "When does the game end and who loses?",
+      "Can I win on someone else's turn?",
+      "How many points do I need to win?",
+      "When can a player declare victory or lose the game?",
+      "What is the goal of CATAN?"
+    ]
+  },
+  {
+    "id": "score",
+    "title": "Counting victory points",
+    "page": 14,
+    "start": "Players acquire victory points",
+    "end": "begins the game with 2 victory points.",
+    "answer": "Count 1 point per settlement, 2 per city, 2 each for Longest Road and Largest Army, and 1 per victory point card. Your two starting settlements give you 2 points.",
+    "queries": [
+      "How do I score or count my victory points?",
+      "What is each piece worth?",
+      "How many points do I start with?"
+    ]
+  },
+  {
+    "id": "board",
+    "title": "Lay out the island",
+    "page": 2,
+    "start": "The frame pieces hold",
+    "end": "Finally, place your settlements and roads.",
+    "answer": "Match the numbers at the ends of the frame pieces. For your first game, copy Illustration A on page 3: arrange the 19 terrain hexes, then put the number tokens on the indicated hexes.",
+    "queries": [
+      "How do I set up the board for our first game?",
+      "Where do the tiles and numbers go?",
+      "Show me the beginner map",
+      "How do we get started playing for the first time?"
+    ]
+  },
+  {
+    "id": "pieces",
+    "title": "Place the starting pieces",
+    "page": 3,
+    "start": "Select a color",
+    "end": "See Illustration B.",
+    "answer": "Choose a color and take its 5 settlements, 4 cities, 15 roads, and building-cost card. On the beginner map, place 2 settlements and 2 roads in the pictured positions for your color. With three players, leave red out.",
+    "queries": [
+      "Which pieces does each player get?",
+      "Which color do we leave out with three players?",
+      "How many cities roads and settlements come in each color?",
+      "What is the maximum number of roads or settlements I can have?"
+    ]
+  },
+  {
+    "id": "supply",
+    "title": "Prepare the supply",
+    "page": 12,
+    "start": "Sort the resource cards",
+    "end": "Place the robber in the desert.",
+    "answer": "Put the five resource piles face up and the shuffled development deck face down. Set both bonus cards and the dice beside the board. Place the robber on the desert.",
+    "queries": [
+      "Where does the robber start?",
+      "Set out the bank and shuffle the cards",
+      "How do I prepare the supply?"
+    ]
+  },
+  {
+    "id": "starting-hand",
+    "title": "Take starting resources",
+    "page": 13,
+    "start": "If you want to use the starting set-up",
+    "end": "first turn and rolls for resource production.",
+    "answer": "On the beginner map, take one resource from each of the three hexes touching your white-starred settlement. The oldest player takes the first turn.",
+    "queries": [
+      "Which cards do I get at the start on the beginner board?",
+      "What does the white star mean?",
+      "Who goes first in the beginner game?",
+      "Beginner setup: choosing the starting player for the opening dice roll."
+    ]
+  },
+  {
+    "id": "opening",
+    "title": "Variable setup: placement order",
+    "page": 12,
+    "start": "Each player rolls both dice.",
+    "end": "rolls both dice for resource production.",
+    "answer": "For variable setup, highest roll places a settlement and an adjacent road first. Continue clockwise. The last player places again, then go back in reverse order. Follow the distance rule. Take starting resources from the hexes touching your second settlement. The original starting player rolls first. The second settlement need not connect to the first.",
+    "queries": [
+      "How does snake order work during initial placement?",
+      "Who goes first on a random board?",
+      "Does my second starting settlement need to connect to my first?",
+      "Variable setup: who starts placement and rolls first on a randomized map."
+    ]
+  },
+  {
+    "id": "turn",
+    "title": "A turn in three steps",
+    "page": 4,
+    "start": "On your turn, you can do",
+    "end": "continues the game with step 1.",
+    "answer": "Roll both dice for production, trade if you want, then build or buy development cards. Pass the dice to your left. An eligible development card can also be played during your turn.",
+    "queries": [
+      "What do I do on my turn?",
+      "Remind me of the order of play",
+      "What happens after I roll?",
+      "Turn sequence: roll for production, trade, then build."
+    ]
+  },
+  {
+    "id": "production",
+    "title": "Collecting resources",
+    "page": 10,
+    "start": "There are 5 different types of resources",
+    "end": "each city produces 2 resource cards.",
+    "answer": "On a production roll, every player collects from matching, unblocked hexes touching their buildings: 1 resource for each settlement and 2 for each city. It doesn’t have to be your turn.",
+    "queries": [
+      "Who collects when the dice match a tile?",
+      "Do I get resources when another player rolls?",
+      "How much does a city produce?",
+      "Collecting income from a resource hex on an opponent’s roll."
+    ]
+  },
+  {
+    "id": "terrain",
+    "title": "Terrain and resources",
+    "page": 3,
+    "start": "Hills Produce Brick",
+    "end": "Desert Produces Nothing",
+    "answer": "Hills give brick, forests give lumber, mountains give ore, fields give grain, and pastures give wool. The desert produces nothing.",
+    "queries": [
+      "Which tiles make wood sheep wheat brick or ore?",
+      "What resources do different terrains produce?",
+      "What does the desert give me?"
+    ]
+  },
+  {
+    "id": "shortage",
+    "title": "When the bank runs short",
+    "page": 10,
+    "start": "It is possible that during",
+    "end": "resources is not affected.",
+    "answer": "If the supply can’t pay everyone due a particular resource, nobody gets that type. If only one player is affected, they take what remains. Other resource types still pay out.",
+    "queries": [
+      "What if the bank runs out of a resource?",
+      "Who gets paid when there aren't enough cards?",
+      "Resource shortage: distributing the remaining supply to one or several players owed cards."
+    ]
+  },
+  {
+    "id": "trade",
+    "title": "Trading with other players",
+    "page": 14,
+    "start": "After you roll for resource",
+    "end": "2 wool for 1 wool).",
+    "answer": "After rolling, the active player may trade resources with other players. Every trade must involve the active player. No gifts, development-card trades, or swaps of a resource for the same type. Bank trades are only on your own turn.",
+    "queries": [
+      "Can two other players trade on my turn?",
+      "Can I give a friend a card for free?",
+      "Can we trade development cards?",
+      "How does domestic trade work?"
+    ]
+  },
+  {
+    "id": "harbor",
+    "title": "Bank trades and harbors",
+    "page": 4,
+    "start": "You can also trade without",
+    "end": "settlement on a harbor.",
+    "answer": "On your turn, give the bank 4 of one resource for 1 of your choice. With a settlement or city on a generic harbor, the rate is 3:1. A specialty harbor gives 2:1 only for the resource shown.",
+    "queries": [
+      "Can I trade with the bank without a port?",
+      "What are the harbor exchange rates?",
+      "How does a two for one port work?",
+      "Maritime exchange: identical resource cards at a generic or specialty port."
+    ]
+  },
+  {
+    "id": "road",
+    "title": "Building a road",
+    "page": 4,
+    "start": "Road Requires: Brick & Lumber",
+    "end": "built on any given path.",
+    "answer": "Spend 1 brick and 1 lumber. Place the road on an empty edge connected to one of your roads, settlements, or cities.",
+    "queries": [
+      "How much does a road cost?",
+      "Where can I build a road?",
+      "What do I need to make a road?"
+    ]
+  },
+  {
+    "id": "settlement",
+    "title": "Building a settlement",
+    "page": 5,
+    "start": "Settlement Requires: Brick",
+    "end": "settlement is worth 1 victory point.",
+    "answer": "Spend 1 brick, 1 lumber, 1 wool, and 1 grain. After setup, build on an empty intersection connected to one of your roads. All neighboring intersections must be free of settlements and cities, including your own. It’s worth 1 point.",
+    "queries": [
+      "What does a settlement cost?",
+      "Can I build next to another settlement?",
+      "Explain the distance rule",
+      "Which spots are legal for a new settlement? Can two houses be neighbors?",
+      "Minimum distance between neighboring houses; settlement placement and spacing."
+    ]
+  },
+  {
+    "id": "city",
+    "title": "Upgrading to a city",
+    "page": 5,
+    "start": "City Requires: 3 Ore",
+    "end": "Each city is worth 2 victory points.",
+    "answer": "Spend 3 ore and 2 grain to replace one of your settlements with a city. Return the settlement to your supply. A city is worth 2 points total and collects 2 resources when an adjacent hex produces.",
+    "queries": [
+      "What does a city cost?",
+      "How do I upgrade a village to a city?",
+      "How many points is a city worth?",
+      "How do I turn a settlement into a city?"
+    ]
+  },
+  {
+    "id": "development",
+    "title": "Buying development cards",
+    "page": 5,
+    "start": "Buying a Development Card Requires",
+    "end": "opponents can’t anticipate your play.",
+    "answer": "Spend 1 ore, 1 wool, and 1 grain to draw the top development card. Keep it hidden until used. If the deck is empty, you can’t buy one.",
+    "queries": [
+      "What is the cost of buying a development card?",
+      "Can I choose which development card I buy?",
+      "What if the development deck runs out?"
+    ]
+  },
+  {
+    "id": "play-card",
+    "title": "Playing a development card",
+    "page": 7,
+    "start": "You may only play 1 development",
+    "end": "declares victory.",
+    "answer": "Play at most one knight or progress card on your turn, even before rolling. You can’t play one you just bought. The exception is victory point cards: reveal them, including newly bought ones, to declare a win on your turn.",
+    "queries": [
+      "Can I play a development card I just bought?",
+      "Can I use a knight before rolling?",
+      "How many development cards may I play per turn?"
+    ]
+  },
+  {
+    "id": "vp-card",
+    "title": "Revealing victory point cards",
+    "page": 5,
+    "start": "You must keep victory point cards hidden.",
+    "end": "turn you purchase them.",
+    "answer": "Keep victory point cards secret until the game ends. On your turn, reveal as many as you need to win, even ones you just bought. You can also show them after someone else wins.",
+    "queries": [
+      "When do I reveal hidden victory point cards?",
+      "Can a victory point card I just drew win the game?"
+    ]
+  },
+  {
+    "id": "seven",
+    "title": "Rolling a seven",
+    "page": 5,
+    "start": "If you roll a “7,”",
+    "end": "The robber prevents it.",
+    "answer": "On a 7, no hex produces. Anyone holding more than 7 resource cards discards half, rounded down. The roller moves the robber to a different hex, then takes one random resource card from an eligible opponent with a building there, if possible.",
+    "queries": [
+      "What happens if someone rolls a seven?",
+      "How many cards must I discard if I have nine cards?",
+      "Do I discard with exactly seven resource cards?",
+      "What happens to my hand when someone rolls 7?"
+    ]
+  },
+  {
+    "id": "robber",
+    "title": "What the robber blocks",
+    "page": 11,
+    "start": "The robber begins",
+    "end": "as long as the robber is in the hex.",
+    "answer": "The robber starts in the desert. A 7 or a knight moves it. Only the occupied hex is blocked: it gives no resources to any adjacent settlement or city while the robber stays there.",
+    "queries": [
+      "What does the robber block?",
+      "Does the robber stop resource production?",
+      "How do I move the robber?",
+      "Production from a resource tile occupied by the robber."
+    ]
+  },
+  {
+    "id": "knight",
+    "title": "Playing a knight",
+    "page": 8,
+    "start": "When you play a “Knight”",
+    "end": "If that player has no cards, you get nothing!",
+    "answer": "Playing a knight moves the robber to a different hex, including the desert. Pick one opponent with a settlement or city there and take a random resource card. If that opponent has none, you get nothing. Leave the knight face up.",
+    "queries": [
+      "What does a knight card do?",
+      "Who can I steal from with a knight?",
+      "Can I steal if a player has no cards?"
+    ]
+  },
+  {
+    "id": "army",
+    "title": "Largest Army",
+    "page": 8,
+    "start": "If you are the first player to play 3",
+    "end": "count for the new owner.",
+    "answer": "The first player with 3 played knights takes Largest Army and 2 points. Another player takes it only by playing more knights than the holder; a tie doesn’t transfer it.",
+    "queries": [
+      "How do I get Largest Army?",
+      "How many knights are needed for the army bonus?",
+      "Does a tie take Largest Army?"
+    ]
+  },
+  {
+    "id": "longest",
+    "title": "Longest Road",
+    "page": 9,
+    "start": "If you are the first player to build",
+    "end": "They also acquire the 2 bonus victory points.",
+    "answer": "The first continuous route of at least 5 road pieces earns Longest Road, worth 2 points. At a fork, count only the longest single route. A challenger must build a longer route; matching the holder’s length isn’t enough.",
+    "queries": [
+      "How do I claim Longest Road?",
+      "Can I count branches or forks?",
+      "How many roads for the bonus?"
+    ]
+  },
+  {
+    "id": "broken-road",
+    "title": "Breaking Longest Road",
+    "page": 9,
+    "start": "You can break an opponent’s road",
+    "end": "of at least 5 road pieces).",
+    "answer": "A legal settlement can interrupt another player’s road. If the holder still ties for longest at 5 or more, they keep the card. If they fall behind and two others tie for longest, or nobody has 5, set the card aside until a sole qualifying leader emerges.",
+    "queries": [
+      "Can a settlement break my longest road?",
+      "What happens if a road is interrupted and the leaders tie?"
+    ]
+  },
+  {
+    "id": "monopoly",
+    "title": "Monopoly card",
+    "page": 10,
+    "start": "Monopoly: If you play",
+    "end": "give you anything.",
+    "answer": "Name one resource type. Every other player gives you all cards of that type in their hand; players without it give nothing.",
+    "queries": [
+      "How does the monopoly card work?",
+      "Can monopoly take everyone's ore?"
+    ]
+  },
+  {
+    "id": "plenty",
+    "title": "Year of Plenty",
+    "page": 10,
+    "start": "Year of Plenty:",
+    "end": "build in the same turn.",
+    "answer": "Take any 2 resource cards from the supply. You may spend them to build this turn.",
+    "queries": [
+      "What does Year of Plenty do?",
+      "Can the two free resources be spent right away?"
+    ]
+  },
+  {
+    "id": "free-roads",
+    "title": "Road Building card",
+    "page": 10,
+    "start": "Road Building:",
+    "end": "normal building rules).",
+    "answer": "Place 2 roads for free, following the normal road-placement rules.",
+    "queries": [
+      "What does the Road Building development card do?",
+      "How many free roads can I place?"
+    ]
+  },
+  {
+    "id": "pips",
+    "title": "Reading number tokens",
+    "page": 10,
+    "start": "The more often a number",
+    "end": "roll these numbers on the 2 dice.",
+    "answer": "More dots mean a more likely production roll. Of the production numbers, 6 and 8 are the most likely: each has five possible dice combinations.",
+    "queries": [
+      "What do the dots or pips on the number tokens mean?",
+      "Why are 6 and 8 red?"
+    ]
+  },
+  {
+    "id": "tactics",
+    "title": "Opening tips",
+    "page": 13,
+    "start": "Brick and lumber are the most important",
+    "end": "offer trades to the current player!",
+    "answer": "The rulebook suggests starting near a productive source of brick or lumber and leaving space to expand. A harbor can help if you produce a lot of its resource. These are tips, not placement requirements.",
+    "queries": [
+      "What should a beginner keep in mind?",
+      "Any strategy tips for my first settlements?",
+      "Where is a good opening position?"
+    ]
+  },
+  {
+    "id": "random-numbers",
+    "title": "Variable board: number tokens",
+    "page": 13,
+    "start": "Place the 18 number tokens",
+    "end": "It should be skipped.",
+    "answer": "For the lettered layout, begin at a corner and spiral counterclockwise toward the center in alphabetical order, skipping the desert. If you randomize the numbers instead, separate adjacent red numbers. The desert never gets a token.",
+    "queries": [
+      "Can two red numbers touch on a random board?",
+      "How do I place numbers on a variable board?"
+    ]
+  },
+  {
+    "id": "components",
+    "title": "Inside the box",
+    "page": 2,
+    "start": "Game Components •",
+    "end": "1 “Game Rules & Almanac” booklet",
+    "answer": "The base box has 19 terrain hexes, 6 frame pieces, 9 harbors, 18 number tokens, 95 resource cards, 25 development cards, 4 building-cost cards, 2 bonus cards, 16 cities, 20 settlements, 60 roads, 2 dice, a robber, and the rulebook.",
+    "queries": [
+      "Which components are in the box?",
+      "How many resource cards or development cards are there in the deck?"
+    ]
+  }
+]

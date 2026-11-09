@@ -1,0 +1,20 @@
+[
+  ["How many friends can sit down for a game?", "players", 0],
+  ["When can someone declare victory?", "win", 5],
+  ["I reached ten points during another player's go. Is the game over?", "win", 5],
+  ["Does an intersection next to another house count as a legal settlement spot?", "settlement", 5],
+  ["What materials do I pay to turn a settlement into a city?", "city", 5],
+  ["Can the other two players exchange resources while it is my turn?", "trade", 14],
+  ["Do I need a port to swap resources with the bank?", "harbor", 4],
+  ["What is the hand limit when a 7 is rolled?", "seven", 5],
+  ["If I match your number of knights, do I get Largest Army?", "army", 8],
+  ["Can I include both branches in my Longest Road?", "longest", 9],
+  ["What is the little white star on the beginner map for?", "starting-hand", 13],
+  ["When we play with three people which colour stays in the box?", "pieces", 3],
+  ["What is the discount for buying three roads at once?", null, null],
+  ["What happens when the barbarians invade in Cities and Knights?", null, null],
+  ["How long does a game take?", null, null],
+  ["Who won the world championship?", null, null],
+  ["Can my pirate ship attack a settlement?", null, null],
+  ["How much money does the game cost?", null, null]
+]

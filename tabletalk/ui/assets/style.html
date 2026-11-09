@@ -1,0 +1,25 @@
+<style>
+.stMainBlockContainer {max-width: 47rem; padding-top: 2rem}
+[data-testid="stHeader"] {background:transparent; height:1rem}
+.brand {font:700 .8rem/2 system-ui,sans-serif;letter-spacing:.17em;color:#213e36;
+  border-bottom:1px solid #d0cdbf;padding-bottom:.85rem;margin-bottom:.9rem}
+.brand span {color:#a45134;font-size:1.6rem;vertical-align:-.12em;margin-right:.25em}
+.eyebrow {font:700 .69rem/1.6 system-ui,sans-serif;color:#716756;letter-spacing:.15em;margin-top:.4rem}
+h1,h2,h3 {font-family:Georgia,serif!important;letter-spacing:-.035em}
+h1 {font-size:clamp(2.6rem,7vw,4rem)!important;line-height:1.06!important}
+a {text-underline-offset:.15em}
+:is(.st-key-pick_catan,.st-key-pick_pandemic) button {min-height:13rem;text-align:left;justify-content:flex-start;
+  align-items:flex-end;padding:1.7rem;border:0;border-radius:1rem;
+  color:#fff9ec!important;background-color:#1f443b!important;
+  background-position:right center;background-size:auto 100%;background-repeat:no-repeat}
+:is(.st-key-pick_catan,.st-key-pick_pandemic) button p {font: bold clamp(1.65rem,5vw,2.35rem)/1.1 Georgia,serif;
+  max-width:8.8rem;text-wrap:balance;text-align:left;color:#fff9ec}
+:is(.st-key-pick_catan,.st-key-pick_pandemic) button:hover {box-shadow:0 0 0 3px #c18a53 inset}
+:is(.st-key-pick_catan,.st-key-pick_pandemic) button:focus-visible {outline:3px solid #a45134;outline-offset:3px}
+.st-key-pick_catan button {background-image:var(--catan-art)}
+.st-key-pick_pandemic button {background-color:#16354c!important;background-image:var(--pandemic-art)}
+[data-testid="stChatMessage"] {border-radius:1rem}
+@media (max-width:600px){.stMainBlockContainer{padding:1.35rem 1rem 4rem}
+  :is(.st-key-pick_catan,.st-key-pick_pandemic) button {min-height:10rem;padding:1.1rem;background-position:calc(100% + 23px) center}
+  :is(.st-key-pick_catan,.st-key-pick_pandemic) button p{max-width:7rem}}
+</style>

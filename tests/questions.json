@@ -1,0 +1,22 @@
+[
+  ["There are four of us tonight. Is this the right size group?", "players", 0],
+  ["If I hit 10 points between turns, can I claim the win immediately?", "win", 5],
+  ["What order do rolling, building and trading happen in?", "turn", 4],
+  ["Who gets the first roll if we use the printed beginner board?", "starting-hand", 13],
+  ["Do I still take wheat on somebody else's dice roll?", "production", 10],
+  ["Which terrain gives me wool?", "terrain", 3],
+  ["What do I have to pay for a new road?", "road", 4],
+  ["Do I need ore and grain for a city upgrade?", "city", 5],
+  ["How far apart do two settlements have to be?", "settlement", 5],
+  ["Can I swap three matching cards at a generic harbor?", "harbor", 4],
+  ["If the robber is on my wheat tile, does that tile still produce?", "robber", 11],
+  ["Is there a limit to how many development cards I can play in one turn?", "play-card", 7],
+  ["Can I take a resource from every player with Monopoly?", "monopoly", 10],
+  ["If two of us are owed brick but the bank has too few cards, who takes them?", "shortage", 10],
+  ["Can I negotiate a trade in Seafarers?", null, null],
+  ["Which train routes should I buy in Ticket to Ride?", null, null],
+  ["Who illustrated this box cover?", null, null],
+  ["Can we settle ties with our house rule?", null, null],
+  ["What currency are tournament entry fees paid in?", null, null],
+  ["Can I ask the cat to roll a third die for luck?", null, null]
+]

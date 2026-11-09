@@ -1,0 +1,403 @@
+[
+  {
+    "id": "players",
+    "title": "Number of players",
+    "page": 2,
+    "start": "# of players",
+    "end": "4-player game 2",
+    "answer": "The base game supports 2–4 players.",
+    "queries": [
+      "How many people can play Pandemic?",
+      "Can we play with two players?",
+      "Is five too many for the base game?",
+      "Can a fifth person join?",
+      "How big a group can play the base game?"
+    ]
+  },
+  {
+    "id": "win",
+    "title": "Winning together",
+    "page": 7,
+    "start": "The players win as soon",
+    "end": "no matter how many cubes are on the board.",
+    "answer": "Everyone wins immediately when the team discovers the fourth cure. You don’t have to eradicate the diseases or clear the cubes still on the board.",
+    "queries": [
+      "How do we win?",
+      "What is the objective?",
+      "When does a person win?",
+      "Must we eradicate all diseases to win?",
+      "Is victory immediate after the last cure?",
+      "What is the goal of the game?"
+    ]
+  },
+  {
+    "id": "lose",
+    "title": "Three ways the team loses",
+    "page": 1,
+    "start": "The players lose if:",
+    "end": "team runs out of time).",
+    "answer": "Everyone loses on the eighth outbreak, when a required disease cube is unavailable in its color, or when a player must draw two Player cards and cannot. An empty supply or deck alone doesn’t trigger a loss.",
+    "queries": [
+      "How can we lose?",
+      "How many outbreaks can we survive?",
+      "What if there aren't enough cubes left?",
+      "What causes defeat?",
+      "What happens if the Player deck runs out?"
+    ],
+    "also": [
+      {
+        "page": 6,
+        "start": "After doing 4 actions",
+        "end": "Do not reshuffle the discards to form a new deck.)"
+      }
+    ]
+  },
+  {
+    "id": "board",
+    "title": "Prepare the board and markers",
+    "page": 2,
+    "start": "Place the outbreaks marker",
+    "end": "Place 1 research station in Atlanta.",
+    "answer": "Put one of the six research stations in Atlanta and the rest beside the board. Sort the cubes into four color supplies. Set outbreaks to zero and place the four cure markers vial-side up beside their indicators.",
+    "queries": [
+      "Where does the starting research station go?",
+      "Where do I put the cure markers and outbreak marker?"
+    ]
+  },
+  {
+    "id": "seed",
+    "title": "Setup: initial infection of nine cities",
+    "page": 3,
+    "start": "Place the infection rate marker on",
+    "end": "form the Infection Deck.",
+    "answer": "Start the infection rate on the leftmost 2. Shuffle the Infection deck. Reveal three cities and give each three matching cubes; give the next three cities two each, and the final three one each. Leave all nine revealed cards in the Infection discard pile.",
+    "queries": [
+      "How many cubes do cities start with?",
+      "How do we seed initial infections?",
+      "What is the starting infection rate?",
+      "How many cities start infected?",
+      "Which cities are infected during initial setup?"
+    ]
+  },
+  {
+    "id": "starting-hand",
+    "title": "Deal roles and starting hands",
+    "page": 2,
+    "start": "Give each player a reference card.",
+    "end": "4-player game 2",
+    "answer": "Give each player a reference card and a random face-up role. Start the matching pawns in Atlanta and put unused roles and pawns away. Set Epidemics aside, shuffle the City and Event cards, then deal each player 4 cards with two players, 3 with three, or 2 with four.",
+    "queries": [
+      "How many cards do we start with?",
+      "Where do the pawns start?",
+      "How are roles assigned?",
+      "How many cards do you deal each player in a three-player game?",
+      "Do all pawns begin in Atlanta?",
+      "Where do we put our pawns to begin the game?"
+    ]
+  },
+  {
+    "id": "difficulty",
+    "title": "Choose a difficulty and build the Player deck",
+    "page": 3,
+    "start": "Set the game’s difficulty",
+    "end": "smaller piles on the bottom.",
+    "answer": "Use 4 Epidemics for an introductory game, 5 for standard, or 6 for heroic. Remove the unused Epidemics. After dealing hands, divide the remaining Player cards into that many nearly equal piles. Shuffle one Epidemic into each pile and stack them, smaller piles on the bottom.",
+    "queries": [
+      "How many epidemic cards should beginners use?",
+      "How do I shuffle epidemics into the deck?",
+      "What difficulty should a first game use?"
+    ]
+  },
+  {
+    "id": "first-player",
+    "title": "Choose the first player",
+    "page": 3,
+    "start": "The players look at",
+    "end": "population goes first.",
+    "answer": "Compare the populations printed on the City cards in players’ starting hands. Whoever holds the city with the highest population takes the first turn.",
+    "queries": [
+      "Who goes first?",
+      "Who starts?",
+      "How do we choose the starting player?"
+    ]
+  },
+  {
+    "id": "turn",
+    "title": "The three parts of a turn",
+    "page": 3,
+    "start": "Each player turn",
+    "end": "turn it is decides what to do.",
+    "answer": "Take up to four actions (repeats are allowed), draw two Player cards, then infect cities. The player to your left goes next. Teammates can offer advice; the active player decides what to do.",
+    "queries": [
+      "Walk me through my turn.",
+      "What is the turn order?",
+      "How many actions can I take?",
+      "When do we infect cities?",
+      "Who decides what to do on my turn?"
+    ],
+    "also": [
+      {
+        "page": 4,
+        "start": "You may do up to 4 actions",
+        "end": "each time counting as 1 action."
+      }
+    ]
+  },
+  {
+    "id": "movement",
+    "title": "Travel between cities",
+    "page": 4,
+    "start": "MoveMent aCtIons",
+    "end": "otheR aCtIons",
+    "answer": "Each move takes one action. Drive or ferry along a white line. For a direct flight, discard your destination’s City card; for a charter flight, discard your current city’s card and fly anywhere. Shuttle between two research stations without discarding a card.",
+    "queries": [
+      "How does a direct flight differ from a charter flight?",
+      "How do I move?",
+      "Can I fly between research stations without a card?",
+      "Do I discard my destination or my current city?"
+    ]
+  },
+  {
+    "id": "station",
+    "title": "Build a research station",
+    "page": 4,
+    "start": "Build a Research station Discard",
+    "end": "anywhere on the board.",
+    "answer": "Normally, spend an action and discard the City card for your current city to place a research station there. If all six stations are on the board, move one of those stations to the new site.",
+    "queries": [
+      "How do I build a research station?",
+      "What if all six research stations have been used?"
+    ]
+  },
+  {
+    "id": "treat",
+    "title": "Treat disease cubes",
+    "page": 4,
+    "start": "treat Disease Remove",
+    "end": "share Knowledge",
+    "answer": "Normally one Treat Disease action removes one cube from your city and returns it to the supply. If that disease is cured, remove every cube of that color in your city with one action. Treat other colors separately.",
+    "queries": [
+      "How many cubes do I remove when treating?",
+      "How does treating a cured disease work?",
+      "Can I remove multiple colors with one action?"
+    ]
+  },
+  {
+    "id": "cure",
+    "title": "Discover a cure",
+    "page": 4,
+    "start": "Discover a Cure At any",
+    "end": "to its Cure Indicator.",
+    "answer": "At any research station, spend an action and discard five City cards of one color from your own hand to discover that color’s cure. The station’s city need not match the disease color. The Scientist needs only four matching cards.",
+    "queries": [
+      "How do I discover a cure?",
+      "How many cards are needed for a cure?",
+      "Do I need to be in a matching city?",
+      "Can you discover a cure at any research station?"
+    ],
+    "also": [
+      {
+        "page": 8,
+        "start": "The Scientist needs",
+        "end": "that disease."
+      }
+    ]
+  },
+  {
+    "id": "eradicate",
+    "title": "Cured versus eradicated",
+    "page": 4,
+    "start": "Eradicating a disease is not needed",
+    "end": "closer to winning.",
+    "answer": "A cure alone leaves existing cubes in play, and new ones can still appear. Once a cured color has no cubes anywhere on the board, it’s eradicated: no more cubes of that color are placed. Clearing an uncured color does not eradicate it.",
+    "queries": [
+      "What is the difference between curing and eradication?",
+      "Can a cured disease come back?",
+      "Does removing all cubes before finding a cure eradicate the disease?"
+    ]
+  },
+  {
+    "id": "share",
+    "title": "Share Knowledge",
+    "page": 4,
+    "start": "share Knowledge You can",
+    "end": "see Event Cards on page 7).",
+    "answer": "Spend an action to give or take the City card matching the city both players occupy. Both must agree. The recipient must immediately get back to seven cards if over the limit, by discarding or playing an Event. The Researcher has a special transfer ability.",
+    "queries": [
+      "Can I just give a teammate a card?",
+      "How do players trade cards?",
+      "Which card can I share if we're both in Atlanta?",
+      "Can we exchange cards from different cities?"
+    ],
+    "also": [
+      {
+        "page": 8,
+        "start": "the Researcher may give any",
+        "end": "on either player’s turn."
+      }
+    ]
+  },
+  {
+    "id": "infection",
+    "title": "Infect cities at the end of a turn",
+    "page": 6,
+    "start": "Flip over as many",
+    "end": "Discard this card to the Infection Discard Pile.",
+    "answer": "Reveal Infection cards one at a time, as many as the current infection rate. Add one cube of the card’s color in that city unless the disease is eradicated. If three of that color are already there, resolve an outbreak instead of adding a fourth. Discard the card.",
+    "queries": [
+      "How many infection cards do I flip?",
+      "How does the infection phase work?",
+      "Does a fourth cube cause an outbreak?"
+    ]
+  },
+  {
+    "id": "outbreak",
+    "title": "Outbreaks and chain reactions",
+    "page": 7,
+    "start": "When a disease outbreak occurs",
+    "end": "up to 3 cubes of each color.",
+    "answer": "Advance the outbreak marker one space and spread one cube of the outbreak color to each connected city. A neighbor already at three of that color has a chain outbreak instead. Skip cities that already had an outbreak while resolving this Infection card; one city can’t outbreak twice from it.",
+    "queries": [
+      "What happens in an outbreak?",
+      "How do chain reactions work?",
+      "Can the same city outbreak twice in one chain?",
+      "What color spreads to the neighboring cities?"
+    ]
+  },
+  {
+    "id": "epidemic",
+    "title": "Resolve an Epidemic",
+    "page": 6,
+    "start": "If your draws include",
+    "end": "Do not draw replacement cards for them.",
+    "answer": "Advance the infection-rate marker one space. Draw the bottom Infection card. Unless its color is eradicated, add three cubes to that city if it has none of that color; otherwise fill it to three and resolve one outbreak. Discard the Infection card. Shuffle only the Infection discards and put them on top of the deck. Resolve two Epidemics separately; remove resolved Epidemics without drawing replacements.",
+    "queries": [
+      "What do I do when I draw an Epidemic?",
+      "Do I draw a replacement after an epidemic?",
+      "Which discard pile do I shuffle?",
+      "What if I draw two epidemics at once?"
+    ]
+  },
+  {
+    "id": "hand-limit",
+    "title": "Hand limit of seven",
+    "page": 6,
+    "start": "hanD LIMIt If",
+    "end": "see Event Cards on page 7).",
+    "answer": "You can hold at most seven Player cards. When you go over, discard or play Events until you’re back to seven. If you just drew Epidemics, resolve them before checking your hand.",
+    "queries": [
+      "What is the hand limit?",
+      "How many cards can I hold?",
+      "Must I discard if I have eight cards?"
+    ]
+  },
+  {
+    "id": "events",
+    "title": "When to play an Event",
+    "page": 7,
+    "start": "During a turn, any player",
+    "end": "discard it to the Player Discard Pile.",
+    "answer": "Any player may play an Event on anyone’s turn without spending an action. You can’t interrupt a card between drawing it and resolving it. For example, finish one Infection card before playing an Event ahead of the next draw.",
+    "queries": [
+      "Can I play an event on someone else's turn?",
+      "Can I interrupt an outbreak with Airlift?",
+      "Does an event cost an action?"
+    ]
+  },
+  {
+    "id": "medic",
+    "title": "Medic",
+    "page": 8,
+    "start": "The Medic removes",
+    "end": "cured diseases in his location.",
+    "answer": "When treating, the Medic removes every cube of one color in their city. Cured colors are cleared automatically in the Medic’s city without an action, and no cubes of cured colors can be placed there.",
+    "queries": [
+      "How does the Medic work?",
+      "Can the medic remove all cubes of an uncured color?",
+      "Does the medic have to spend an action on a cured disease?"
+    ]
+  },
+  {
+    "id": "scientist",
+    "title": "Scientist",
+    "page": 8,
+    "start": "The Scientist needs",
+    "end": "that disease.",
+    "answer": "The Scientist needs four City cards of the same color instead of five to discover that color’s cure. The action still takes place at a research station.",
+    "queries": [
+      "How many cards does the Scientist need for a cure?",
+      "Can the scientist cure with four?",
+      "What does the scientist do?"
+    ],
+    "also": [
+      {
+        "page": 4,
+        "start": "Discover a Cure At any",
+        "end": "to its Cure Indicator."
+      }
+    ]
+  },
+  {
+    "id": "researcher",
+    "title": "Researcher",
+    "page": 8,
+    "start": "the Researcher may give any",
+    "end": "on either player’s turn.",
+    "answer": "The Researcher can give any City card from their hand to a player in the same city, even if the card names somewhere else. It costs an action on either participant’s turn. The exception applies to cards leaving the Researcher’s hand, not to cards they receive.",
+    "queries": [
+      "Can the Researcher give any city card?",
+      "Can the Researcher receive any card?",
+      "How does the Researcher share knowledge?"
+    ]
+  },
+  {
+    "id": "dispatcher",
+    "title": "Dispatcher",
+    "page": 8,
+    "start": "The Dispatcher may, as an action",
+    "end": "such as Treat Disease.",
+    "answer": "With the owner’s permission, spend an action to bring a pawn to a city occupied by another pawn, or move another player’s pawn as if it were yours. This grants movement only. For direct or charter flights using that pawn, spend cards from your own hand.",
+    "queries": [
+      "What can the Dispatcher do?",
+      "Can the Dispatcher make the Medic treat a city?",
+      "Whose card pays for a Dispatcher flight?"
+    ]
+  },
+  {
+    "id": "quarantine",
+    "title": "Quarantine Specialist",
+    "page": 8,
+    "start": "The Quarantine Specialist prevents",
+    "end": "cubes placed during setup.",
+    "answer": "The Quarantine Specialist blocks cube placement and outbreaks in their own city and every directly connected city. This protection does not apply during setup.",
+    "queries": [
+      "What does the Quarantine Specialist prevent?",
+      "Are adjacent cities protected by quarantine?",
+      "Does quarantine apply during setup?"
+    ]
+  },
+  {
+    "id": "operations",
+    "title": "Operations Expert",
+    "page": 8,
+    "start": "The Operations Expert may",
+    "end": "discarding any City card.",
+    "answer": "The Operations Expert can build a research station in their city for one action without spending a City card. Once per turn, they can also spend an action and discard any City card to move from a research station to any city.",
+    "queries": [
+      "Can the Operations Expert build for free?",
+      "What is the Operations Expert's special move?"
+    ]
+  },
+  {
+    "id": "planner",
+    "title": "Contingency Planner",
+    "page": 8,
+    "start": "The Contingency Planner may",
+    "end": "instead of discarding it).",
+    "answer": "Spend an action to retrieve an Event from the Player discard pile and store it on your role card. You may store only one; it doesn’t count toward your hand limit. When you play it, remove it from the game.",
+    "queries": [
+      "Can the Contingency Planner reuse an Event?",
+      "Does a stored Event count toward my hand limit?"
+    ]
+  }
+]

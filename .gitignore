@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+catan-2020.pdf
+pandemic.pdf
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
