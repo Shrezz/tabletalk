@@ -1,0 +1,52 @@
+{
+  "catan": {
+    "lookup": [
+      ["What makes it a win for our table?", {"win": 5}],
+      ["Can five people use just the base box?", {"players": 0}],
+      ["What comes first on my turn: swapping cards or putting down a road?", {"turn": 4}],
+      ["My village is two intersections from yours. Does the space between have to stay empty when I build?", {"settlement": 5}],
+      ["We both played three knights. Do I take the army award away from its owner?", {"army": 8}],
+      ["One of my roads branches in a Y. Can I count both arms for the length bonus?", {"longest": 9}],
+      ["Someone built a village in the middle of my longest route. Who keeps the award?", {"broken-road": 9}],
+      ["Only one brick is left and two of us are due brick. Who gets the last card?", {"shortage": 10}],
+      ["Is the red eight more likely than the three, and what do the dots mean?", {"pips": 10}],
+      ["Can I cash in a victory point card I bought earlier this turn to finish the game?", {"vp-card": 5, "play-card": 7}],
+      ["I rolled seven while holding nine resource cards. How many do I give back?", {"seven": 5}],
+      ["On the random island, can the two red number tokens touch?", {"random-numbers": 13}]
+    ],
+    "unanswerable": [
+      "Can the pirate steal a commodity in Seafarers?",
+      "What is the postage for shipping a replacement robber?",
+      "Can the Scientist trade her last blue City card for a cure in Pandemic?"
+    ],
+    "strategy": [
+      ["My entire hand is 3 ore and 2 grain. Should I upgrade to a city or save for a settlement?", [{"city": 5}, {"settlement": 5}]],
+      ["Should I try for Largest Army or compete for Longest Road?", [{"army": 8}, {"longest": 9}]]
+    ]
+  },
+  "pandemic": {
+    "lookup": [
+      ["What makes it a win for our table?", {"win": 7}],
+      ["Can five people use just the base box?", {"players": 2}],
+      ["Does the Medic spend an action clearing blue cubes when blue is already cured?", {"medic": 8}],
+      ["Who can hand me a City card that doesn't match the city we're standing in?", {"researcher": 8}],
+      ["Can I interrupt an Infection card halfway through resolving it with an Event?", {"events": 7}],
+      ["I'm the Dispatcher. Whose hand pays when I fly somebody else's pawn?", {"dispatcher": 8}],
+      ["There are six research stations already. Can I relocate one when I build?", {"station": 4}],
+      ["A chain spreads back to the city that started it. Does it outbreak twice?", {"outbreak": 7}],
+      ["The epidemic drew a city with two cubes already. Do we top it up first?", {"epidemic": 6}],
+      ["After curing blue do we leave the cubes on the board, and can new blue cubes appear?", {"eradicate": 4}],
+      ["Does the Scientist need five cards or will four do at a station?", {"scientist": 8, "cure": 8}],
+      ["With one card left in the Player deck, do we get to take just one instead of two?", {"lose": 6}]
+    ],
+    "unanswerable": [
+      "What does a scar do to my character in Pandemic Legacy?",
+      "How do I score my Longest Road with the city cards?",
+      "How much is a replacement set of disease cubes?"
+    ],
+    "strategy": [
+      ["I'm the Scientist at a station with four blue cards and blue is the last uncured disease. Treat now or discover the cure?", [{"scientist": 8, "cure": 8}, {"win": 7}, {"treat": 4}]],
+      ["As the Medic, should I clear cubes here or let the Quarantine Specialist protect the connected cities?", [{"medic": 8}, {"quarantine": 8}]]
+    ]
+  }
+}
