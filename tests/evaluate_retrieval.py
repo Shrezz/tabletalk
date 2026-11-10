@@ -9,7 +9,7 @@ from tabletalk.answering.agent import answer
 from tabletalk.retrieval.index import RuleIndex
 from tabletalk.strategy.coach import advise
 
-CASES = Path(__file__).with_name("retrieval_cases.json")
+SUITES = {"benchmark": "retrieval_cases.json", "neighbors": "retrieval_neighbors.json"}
 
 
 def reference(rule):
@@ -69,19 +69,24 @@ def evaluate(game, cases):
                "mrr_at_3": mean(1 / r if r else 0 for r in ranks),
                "no_ruling": sum(row["asserted"] is None for row in negatives), "negatives": len(negatives),
                "all_strategy_evidence": sum(not row["missing_groups"] for row in prompts), "strategies": len(prompts)}
+    metrics["correct_direct"] = sum(row["ruling"] in row["expected"] for row in ranked)
+    metrics["wrong_direct"] = sum(row["ruling"] is not None and row["ruling"] not in row["expected"] for row in ranked)
     return {"metrics": metrics, "lookup": ranked, "unanswerable": negatives, "strategy": prompts}
 
 
-def run():
-    return {game: evaluate(game, cases) for game, cases in json.loads(CASES.read_text()).items()}
+def run(suite="benchmark"):
+    path = Path(__file__).with_name(SUITES[suite])
+    return {game: evaluate(game, cases) for game, cases in json.loads(path.read_text()).items()}
 
 
 def print_report(results, verbose=False):
     for game, details in results.items():
         m = details["metrics"]
+        strategy = (f" | Complete strategy evidence: {m['all_strategy_evidence']}/{m['strategies']}"
+                    if m['strategies'] else "")
         print(f"{game.upper()} | Top 1: {m['hit_at_1']}/{m['questions']} | Top 3: {m['hit_at_3']}/{m['questions']}"
               f" | MRR@3: {m['mrr_at_3']:.3f} | No unsupported ruling: {m['no_ruling']}/{m['negatives']}"
-              f" | Complete strategy evidence: {m['all_strategy_evidence']}/{m['strategies']}")
+              f" | Direct: {m['correct_direct']} correct, {m['wrong_direct']} wrong{strategy}")
         for row in details["lookup"]:
             if verbose or row["rank"] != 1:
                 hits = ", ".join(f"{ref['id']} {ref['pages']} ({ref['score']})" for ref in row["retrieved"])
@@ -97,10 +102,11 @@ def print_report(results, verbose=False):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--suite", choices=SUITES, default="benchmark")
     parser.add_argument("--verbose", action="store_true", help="include successful cases as well as misses")
     parser.add_argument("--json", action="store_true", help="print machine-readable scores and results for every case")
     args = parser.parse_args()
-    results = run()
+    results = run(args.suite)
     if args.json:
         print(json.dumps(results, indent=2))
     else:

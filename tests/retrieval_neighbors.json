@@ -1,0 +1,31 @@
+{
+  "catan": {
+    "lookup": [
+      ["Is trading still possible after I've started constructing things this turn?", {"turn": 4}],
+      ["During a normal round, do I lay my road before making a swap?", {"turn": 4}],
+      ["I've lost the middle link in my network to an opponent's settlement. Do I surrender the road bonus?", {"broken-road": 9}],
+      ["My opponent split my continuous road with a house. How do we reassign the two points?", {"broken-road": 9}],
+      ["On a board with random tiles, which player places the first settlement?", {"opening": 12}],
+      ["Two players want to exchange lumber and brick while I'm taking my turn. Is that allowed?", {"trade": 14}],
+      ["My route branches but no one has built on it. How do I count its length?", {"longest": 9}]
+    ],
+    "unanswerable": [
+      "Does the trading order change in Cities and Knights?",
+      "How does splitting a shipping route work in Seafarers?"
+    ],
+    "strategy": []
+  },
+  "pandemic": {
+    "lookup": [
+      ["Which teammate can offer a card for a city other than the one our pawns occupy?", {"researcher": 8}],
+      ["We're together in Tokyo. Which role could pass me the Paris card here?", {"researcher": 8}],
+      ["I am playing the Researcher. May someone give me any card just because of my role?", {"researcher": 8}],
+      ["Neither of us has a special role for trading. Which card can we exchange in Madrid?", {"share": 4}],
+      ["Can we share knowledge from two separate cities?", {"share": 4}]
+    ],
+    "unanswerable": [
+      "Can I exchange cards across the board under Pandemic Legacy rules?"
+    ],
+    "strategy": []
+  }
+}

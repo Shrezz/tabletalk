@@ -37,7 +37,7 @@ FAMILIES = {
     "lumber": "wood", "wool": "sheep", "grain": "wheat", "ore": "stone",
     "7": "seven", "10": "ten", "2": "two", "3": "three", "4": "four",
     "5": "five", "6": "six", "9": "nine",
-    "win": "winning winner", "trade": "swap swaps exchange exchanges traded trading trades",
+    "win": "winning winner", "trade": "swap swaps swapped swapping exchange exchanges traded trading trades",
     "roll": "rolling rolled rolls", "build": "building builds built",
     "produce": "production produces produced producing yield yields",
     "collect": "collects collected collecting receive receives received take takes pickup",

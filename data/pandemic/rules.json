@@ -347,7 +347,9 @@
     "queries": [
       "Can the Researcher give any city card?",
       "Can the Researcher receive any card?",
-      "How does the Researcher share knowledge?"
+      "How does the Researcher share knowledge?",
+      "Who can give a nonmatching City card to a teammate? The Researcher can pass a card naming somewhere other than the players’ current location.",
+      "Same city, different card: the Researcher's card doesn't have to match the city the two pawns are standing in. This exception only applies when giving."
     ]
   },
   {
