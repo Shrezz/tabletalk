@@ -36,7 +36,7 @@ Open the **Strategy** tab and describe a decision. For example: *“My entire ha
 
 For Pandemic, try: *“I’m the Scientist at a research station with four blue City cards. Blue is the last uncured disease. Should I treat or discover a cure?”* The coach receives Pandemic mechanics and your team’s stated position.
 
-Only this tab calls an LLM. The Streamlit server makes one request per supported strategy turn to the [Ollama chat API](https://docs.ollama.com/api/chat) at `127.0.0.1:11434`. On a phone, the model still runs on the computer hosting Streamlit. The default local model is **gemma4:12b**; no API key is needed. On a fresh machine:
+Only this tab calls an LLM. The coach uses a LangChain `ChatPromptTemplate` to put the game instructions and retrieved evidence in separate messages. LangChain’s [ChatOllama integration](https://docs.langchain.com/oss/python/integrations/chat/ollama) makes one request to local Ollama at `127.0.0.1:11434` with a JSON schema specific to that turn’s sources. The app checks the result before displaying advice. Rules chat still uses the local MiniLM/BM25 retriever without invoking a language model. On a phone, the model still runs on the computer hosting Streamlit. The default local model is **gemma4:12b**; no API key is needed. On a fresh machine:
 
 1. Start [Ollama](https://ollama.com/download) (or run `ollama serve`).
 2. Run `ollama list`. If needed, install the default with `ollama pull gemma4:12b`, or choose an already installed local chat model that supports structured outputs via `export TABLETALK_OLLAMA_MODEL=<model-tag>` before starting Streamlit.
@@ -69,7 +69,7 @@ The coach retrieves the current question and each side of an explicit comparison
 | `tabletalk/ingestion/` | Check the source PDF, clean text, extract rule spans, and build the search index. |
 | `tabletalk/retrieval/` | Local MiniLM encoder, keyword normalization, and hybrid search. |
 | `tabletalk/answering/` | Decide whether to return a reviewed ruling, offer topics, or decline. |
-| `tabletalk/strategy/` | Build strategy context, check explicit hand costs, call local Ollama, validate advice and sources. |
+| `tabletalk/strategy/` | Build strategy context, check explicit hand costs, format the LangChain prompt, call local Ollama, validate advice and sources. |
 | `tabletalk/ui/` | Game shelf, chat history, setup steps, refresher, and original tile artwork. |
 | `data/` | Reviewed rule definitions, compressed index, and embedding model. |
 | `tests/` | Streamlit flow tests, example questions, and evaluation runner. |

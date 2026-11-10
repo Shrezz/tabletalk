@@ -40,7 +40,7 @@ def strategy(index, question, needs):
     cards = []
     if generate.called:
         messages, _schema = generate.call_args.args
-        for source in json.loads(messages[-1]["content"])["sources"]:
+        for source in json.loads(messages[-1].content)["sources"]:
             rule = index.by_id[source["id"]]
             if source["text"] != rule.answer:
                 raise AssertionError(f"Unexpected evidence text for {rule.id}")

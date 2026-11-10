@@ -20,7 +20,8 @@ flowchart TB
     I --> H
     C --> H
     C --> G
-    S <-->|"Rule evidence in · structured advice out"| L["Local Ollama service<br/>Default: gemma4:12b"]
+    S --> LC["LangChain · ChatPromptTemplate<br/>and schema-bound ChatOllama"]
+    LC <-->|"One model call"| L["Local Ollama service<br/>Default: gemma4:12b"]
 ```
 
 CATAN and Pandemic have separate catalogs and indexes; both use the same MiniLM encoder. The app searches local files, so it doesn't fetch or re-embed the rulebook on each question. The catalog provides the source links, including CATAN's publisher catalog for its player-count entry. Chat history is separate for each game and for rules versus strategy.
@@ -32,7 +33,8 @@ sequenceDiagram
     actor P as Player
     participant A as Streamlit app
     participant R as Game retriever
-    participant L as Local LLM
+    participant C as LangChain
+    participant L as Local Ollama
     P->>A: Select a game and mode, then ask a question
     Note over A: Known unsupported variant? Decline here.<br/>Basic setup request? Return the cited checklist here.
     alt Ask a rule
@@ -46,8 +48,10 @@ sequenceDiagram
     else Strategy
         A->>R: Search the question and each side of a comparison
         R-->>A: Relevant rule cards
-        A->>L: Rule cards + player question + recent strategy turns
-        L-->>A: Structured advice with source IDs, clarification or refusal
+        A->>C: Game instructions, rule cards, player position and recent turns
+        C->>L: System and user messages + JSON schema restricted to supplied IDs
+        L-->>C: Model response
+        C-->>A: Parsed advice, clarification or refusal
         A->>A: Validate the response and check cited IDs against supplied rules
         A-->>P: Suggested move, reason, tradeoff and app-built citations<br/>or a question, refusal or error
     end
