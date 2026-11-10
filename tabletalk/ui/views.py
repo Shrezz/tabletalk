@@ -12,8 +12,8 @@ ASSETS = Path(__file__).parent / "assets"
 
 
 @st.cache_resource
-def load_index(game_id: str, index_revision: int):
-    """A rebuilt index must also replace the cached, in-memory retriever."""
+def load_rule_index(game_id: str, index_revision: int) -> RuleIndex:
+    """Share the encoder and ranking data across retriever invocations for this edition."""
     return RuleIndex(game_id)
 
 
@@ -96,7 +96,7 @@ def game_room(game):
                                 default=("Strategy" if st.query_params.get("view") == "strategy" else "Ask a rule"),
                                 label_visibility="collapsed",
                                 key="mode")
-    index = load_index(game.id, (game.directory / "index.npz").stat().st_mtime_ns)
+    index = load_rule_index(game.id, (game.directory / "index.npz").stat().st_mtime_ns)
     if mode == "Strategy":
         strategy_chat(index)
     elif mode == "Set us up":

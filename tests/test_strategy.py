@@ -15,7 +15,7 @@ APP = Path(__file__).resolve().parents[1] / "app.py"
 
 
 def local_response(messages, schema):
-    context = json.loads(messages[-1]["content"])
+    context = json.loads(messages[-1].content)
     ids = [card["id"] for card in context["sources"]]
     assert "city" in ids and "settlement" in ids
     assert schema["properties"]["sources"]["items"]["enum"] == ids
@@ -55,7 +55,7 @@ class StrategyTests(unittest.TestCase):
         tip = advise(self.index, question)
         advise(self.index, "What if my opponent can get there first?", [(question, tip)])
         self.assertEqual(generate.call_count, 2)
-        payload = json.loads(generate.call_args.args[0][-1]["content"])
+        payload = json.loads(generate.call_args.args[0][-1].content)
         self.assertEqual(payload["recent_turns"][0]["player"], question)
         self.assertEqual(tip.sources, ("city", "settlement"))
 

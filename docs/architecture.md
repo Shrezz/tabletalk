@@ -15,12 +15,13 @@ flowchart TB
     UI --> R["Rules handler"]
     UI --> S["Strategy coach"]
     UI --> G["Setup and refresher guides"]
-    R --> H["Hybrid search in the selected game<br/>63% cosine similarity + 37% normalized BM25"]
+    R --> H["LangChain BaseRetriever · selected game<br/>63% cosine similarity + 37% normalized BM25"]
     S --> H
     I --> H
     C --> H
     C --> G
-    S <-->|"Rule evidence in · structured advice out"| L["Local Ollama service<br/>Default: gemma4:12b"]
+    S --> LC["LangChain · ChatPromptTemplate<br/>and schema-bound ChatOllama"]
+    LC <-->|"One model call"| L["Local Ollama service<br/>Default: gemma4:12b"]
 ```
 
 CATAN and Pandemic have separate catalogs and indexes; both use the same MiniLM encoder. The app searches local files, so it doesn't fetch or re-embed the rulebook on each question. The catalog provides the source links, including CATAN's publisher catalog for its player-count entry. Chat history is separate for each game and for rules versus strategy.
@@ -31,13 +32,14 @@ CATAN and Pandemic have separate catalogs and indexes; both use the same MiniLM 
 sequenceDiagram
     actor P as Player
     participant A as Streamlit app
-    participant R as Game retriever
-    participant L as Local LLM
+    participant R as LangChain retriever
+    participant C as LangChain coach
+    participant L as Local Ollama
     P->>A: Select a game and mode, then ask a question
     Note over A: Known unsupported variant? Decline here.<br/>Basic setup request? Return the cited checklist here.
     alt Ask a rule
         A->>R: Search the selected game for the question
-        R-->>A: Top 3 rule topics and match scores
+        R-->>A: Top 3 Documents with citations and match scores
         alt Clear match
             A-->>P: Reviewed answer and source link
         else Ambiguous, weak or missing evidence
@@ -45,15 +47,17 @@ sequenceDiagram
         end
     else Strategy
         A->>R: Search the question and each side of a comparison
-        R-->>A: Relevant rule cards
-        A->>L: Rule cards + player question + recent strategy turns
-        L-->>A: Structured advice with source IDs, clarification or refusal
+        R-->>A: Ranked rule Documents
+        A->>C: Game instructions, rule cards, player position and recent turns
+        C->>L: System and user messages + JSON schema restricted to supplied IDs
+        L-->>C: Model response
+        C-->>A: Parsed advice, clarification or refusal
         A->>A: Validate the response and check cited IDs against supplied rules
         A-->>P: Suggested move, reason, tradeoff and app-built citations<br/>or a question, refusal or error
     end
 ```
 
-**What gets retrieved?** For rules, the app scores each topic using its best MiniLM cosine match and its normalized BM25 keyword score. For strategy, the app starts with four topics for the whole question and adds two per side of an explicit comparison. It also includes relevant prior evidence, game-specific core rules, and up to two recent strategy turns. The LLM receives reviewed rule text and IDs. It does not search the PDF or supply citation URLs.
+**What gets retrieved?** The app invokes a [LangChain retriever](https://docs.langchain.com/oss/python/integrations/retrievers). Each returned document contains the reviewed rule text, edition, rule ID, source URL, primary and additional pages, and ranking signals. This adapter shares each game’s existing index; changing the result limit does not reload the encoder. For rules, the app scores each topic using its best MiniLM cosine match and its normalized BM25 keyword score. For strategy, the app starts with four topics for the whole question and adds two per side of an explicit comparison. It also includes relevant prior evidence, game-specific core rules, and up to two recent strategy turns. The LLM receives reviewed rule text and IDs. It does not search the PDF or supply citation URLs.
 
 **What does validation guarantee?** An advice response must name sources that were actually in the prompt. The app constructs the links from its catalog. That verifies which rules were cited; it does not prove the recommended move is optimal or that every generated sentence follows from those rules. If the model is unavailable or its references fail validation, the app shows an error. Rules and guides still work.
 

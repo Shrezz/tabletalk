@@ -34,8 +34,8 @@ class PandemicRules(unittest.TestCase):
                                      tradeoff="Waiting spends a turn.", sources=["scientist", "win"])
         advise(self.index, "I'm the Scientist at a research station with four blue cards. Treat or cure?")
         (system, user), schema = generate.call_args.args
-        self.assertIn("Pandemic", system["content"])
-        context = json.loads(user["content"])
+        self.assertIn("Pandemic", system.content)
+        context = json.loads(user.content)
         self.assertNotIn("build_menu", context)
         self.assertNotIn("roll_frequencies", context)
         ids = schema["properties"]["sources"]["items"]["enum"]
