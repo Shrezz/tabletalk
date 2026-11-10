@@ -11,7 +11,7 @@ from tabletalk.retrieval.index import RuleIndex
 
 def evaluate(filename, game="catan"):
     idx = RuleIndex(game)
-    idx.search("warm up")
+    idx.retrieve("warm up")
     cases = json.loads(Path(__file__).with_name(filename).read_text())
     known = top3 = correct = answered = safe = refusals = 0
     offered = 0
@@ -22,7 +22,7 @@ def evaluate(filename, game="catan"):
         times.append((perf_counter() - start) * 1000)
         if target:
             known += 1
-            top3 += target in [h.rule.id for h in idx.search(q)]
+            top3 += target in [doc.metadata["rule_id"] for doc in idx.retrieve(q)]
             offered += target in result.suggestions
             answered += bool(result.rule_id)
             correct += bool(result.rule_id == target and idx.by_id[target].page == page)

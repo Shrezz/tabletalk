@@ -36,7 +36,7 @@ Open the **Strategy** tab and describe a decision. For example: *“My entire ha
 
 For Pandemic, try: *“I’m the Scientist at a research station with four blue City cards. Blue is the last uncured disease. Should I treat or discover a cure?”* The coach receives Pandemic mechanics and your team’s stated position.
 
-Only this tab calls an LLM. The coach uses a LangChain `ChatPromptTemplate` to put the game instructions and retrieved evidence in separate messages. LangChain’s [ChatOllama integration](https://docs.langchain.com/oss/python/integrations/chat/ollama) makes one request to local Ollama at `127.0.0.1:11434` with a JSON schema specific to that turn’s sources. The app checks the result before displaying advice. Rules chat still uses the local MiniLM/BM25 retriever without invoking a language model. On a phone, the model still runs on the computer hosting Streamlit. The default local model is **gemma4:12b**; no API key is needed. On a fresh machine:
+Only this tab calls an LLM. The coach uses a LangChain `ChatPromptTemplate` to put the game instructions and retrieved evidence in separate messages. LangChain’s [ChatOllama integration](https://docs.langchain.com/oss/python/integrations/chat/ollama) makes one request to local Ollama at `127.0.0.1:11434` with a JSON schema specific to that turn’s sources. The app checks the result before displaying advice. Both modes invoke a local LangChain retriever; only the strategy coach sends the retrieved rule text to a language model. On a phone, the model still runs on the computer hosting Streamlit. The default local model is **gemma4:12b**; no API key is needed. On a fresh machine:
 
 1. Start [Ollama](https://ollama.com/download) (or run `ollama serve`).
 2. Run `ollama list`. If needed, install the default with `ollama pull gemma4:12b`, or choose an already installed local chat model that supports structured outputs via `export TABLETALK_OLLAMA_MODEL=<model-tag>` before starting Streamlit.
@@ -67,7 +67,7 @@ The coach retrieves the current question and each side of an explicit comparison
 | `app.py` | Streamlit entry point. |
 | `tabletalk/catalog.py` | Rule data, edition, and citation URLs. |
 | `tabletalk/ingestion/` | Check the source PDF, clean text, extract rule spans, and build the search index. |
-| `tabletalk/retrieval/` | Local MiniLM encoder, keyword normalization, and hybrid search. |
+| `tabletalk/retrieval/` | Local MiniLM encoder, keyword normalization, hybrid scoring, and LangChain retriever. |
 | `tabletalk/answering/` | Decide whether to return a reviewed ruling, offer topics, or decline. |
 | `tabletalk/strategy/` | Build strategy context, check explicit hand costs, format the LangChain prompt, call local Ollama, validate advice and sources. |
 | `tabletalk/ui/` | Game shelf, chat history, setup steps, refresher, and original tile artwork. |
@@ -85,7 +85,7 @@ The coach retrieves the current question and each side of an explicit comparison
 | Ingestion and cleaning | Extract PDF text by page, normalize spacing and cross-reference symbols, then select reviewed start/end anchors. Diagram-dependent instructions link to the original diagram; the app does not interpret artwork as prose. |
 | Freshness | The source for each game is a pinned edition, checked by SHA-256 on every rebuild. There is no scheduled refresh: a maintainer reviews changed rules and publishes the new index together with the catalog before that edition is served. |
 | Chunking and embedding | CATAN has 32 curated PDF topics and one catalog topic; Pandemic has 27 PDF topics. A chunk is a complete rule or procedure with conditions; MiniLM embeds its passage, short answer, heading, and example phrasings separately so a short question need not resemble a whole paragraph. Encoder inputs are capped at 256 tokens. |
-| Retrieval | Store normalized 384-dimensional vectors and per-rule word counts in a compressed NumPy index. Normalize table language on both sides of the index (for example, “swap”/“trade” and “far apart”/“distance”). Search only the selected game, combining cosine similarity (63%) with normalized BM25 (37%); keep the best three topics. |
+| Retrieval | Store normalized 384-dimensional vectors and per-rule word counts in a compressed NumPy index. Normalize table language on both sides of the index (for example, “swap”/“trade” and “far apart”/“distance”). A LangChain `BaseRetriever` searches only the selected game, combining cosine similarity (63%) with normalized BM25 (37%). It returns ranked `Document` objects with the reviewed text, rule ID, citation and confidence signals. Rules chat takes three; strategy starts with four and retrieves two per comparison option. |
 | Answer and refusal | Return the selected rule’s reviewed wording and citation. The original score and margin cutoffs still apply. Weak or close matches and questions with multiple unrecognized terms offer topics; unclear starting setups ask which map you are using. Unsupported variants yield no ruling. Simple pronoun follow-ups can reuse the last answered topic. |
 | Faithfulness and latency | Check that all factual claims **and relevant exceptions** are supported, and that the selected rule resolves the question. Track answer coverage and correct non-answers separately; a refusal does not count as a faithful answer. |
 

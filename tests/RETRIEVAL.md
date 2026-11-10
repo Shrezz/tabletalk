@@ -44,3 +44,18 @@ Add player questions to [retrieval_cases.json](retrieval_cases.json). Label them
 - **Strategy:** Each question lists evidence groups. All groups must appear in the actual prompt built by the coach; alternative rules within one group are interchangeable. Only the generation call is stubbed. This checks what evidence the model receives, not whether it chooses the right move.
 
 The regression tests require first place on every original lookup and a direct correct ruling on the three repaired cases. For the separate paraphrase suite, the expected rule must appear in the top three; a clarification is allowed, a wrong ruling is not.
+
+## Comparing direct search with LangChain retrieval
+
+We ran the same fixtures against [the direct search baseline](https://github.com/Shrezz/tabletalk/commit/b9f93ef6d805bf7da45bebb55d606d2e2e785fca) and the LangChain retriever using identical indexes. LangChain changes how both modes request and receive chunks; the MiniLM encoder, BM25, 63/37 blend, result limits and confidence cutoffs are unchanged.
+
+| Measured behavior | Direct search | LangChain |
+| --- | ---: | ---: |
+| Original benchmark: correct first / in top three | 24/24 · 24/24 | 24/24 · 24/24 |
+| Separate paraphrases: correct first / in top three | 8/12 · 12/12 | 8/12 · 12/12 |
+| Unsupported questions receiving no ruling (both sets) | 9/9 | 9/9 |
+| Strategy prompts with all required evidence | 4/4 | 4/4 |
+
+The two JSON reports matched question for question, including the displayed ruling or suggested topics and the evidence supplied to the coach. Across all seven suites (150 distinct game/question pairs), the ordered top four also matched on rule IDs, text, sources, pages and unrounded ranking signals. This compares retrieval and routing, not the quality of generated strategy advice.
+
+As a timing spot check on one Mac, we alternated both paths over the 36 lookup questions for ten rounds after warm-up (360 lookups per path). Median retrieval latency was 1.16 ms for direct scoring vs. 1.19 ms with LangChain; p95 was 1.35 ms vs. 1.38 ms. These backend timings exclude UI and generation. To repeat the quality comparison on two revisions, save the output of `python -m tests.evaluate_retrieval --suite benchmark --json` and `--suite neighbors --json` on each revision and diff corresponding reports.

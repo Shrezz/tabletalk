@@ -22,10 +22,11 @@ def relevant(ref, acceptable):
 
 
 def lookup(index, question, acceptable):
-    hits = index.search(question, k=3)
-    if any(h.rule.game != index.game for h in hits):
+    docs = index.retrieve(question, k=3)
+    if any(doc.metadata["game_id"] != index.game.id for doc in docs):
         raise AssertionError(f"Wrong game returned for {question!r}")
-    ranked = [dict(reference(h.rule), score=round(h.score, 4)) for h in hits]
+    ranked = [{"id": m["rule_id"], "pages": [m["page"], *m["extra_pages"]], "score": round(m["score"], 4)}
+              for m in (doc.metadata for doc in docs)]
     rank = next((n for n, ref in enumerate(ranked, 1) if relevant(ref, acceptable)), None)
     shown = answer(index, question)
     return {"question": question, "expected": acceptable, "rank": rank, "retrieved": ranked,
