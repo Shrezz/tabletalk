@@ -22,7 +22,7 @@ Each one previously opened a topic chooser. The rulings themselves were not rewr
 - Added short, source-supported descriptions of the decisions covered by eight entries, including the competing variable-setup rule. Rebuilt the index from the pinned PDF. No test questions were inserted verbatim; there is no new model, network call, or lower score/margin cutoff.
 - When setup is unspecified, a first-player lookup offers the beginner and variable rules. A bare bank question asks about trade versus payout. Multiple unfamiliar terms can force a topic choice; an extra robber is outside the one-robber base game. These checks reduce some incorrect direct rulings; they do not recognize every unsupported premise.
 
-## Checks and limits
+## Checks and limits (earlier benchmark)
 
 A correct direct ruling must select the labeled rule and page. A wrong direct ruling includes both a wrong answer to an in-scope question and asserting a rule on an unsupported or ambiguous question. A chooser or refusal is not a direct answer. Where one topic can be chosen, the evaluation does not assume the player picked it.
 
@@ -32,6 +32,8 @@ A correct direct ruling must select the labeled rule and page. A wrong direct ru
 | Earlier calibration (18) | 12 → **12/12** | 12 → 12/12 | 0 → 0 |
 | Additional paraphrases and ambiguity checks (26) | 2 → **5/14** | 14 → 14/14 | 3 → 0 |
 | Final holdout (16), scored after changes | **3/8** | 7/8 | 0 |
+
+The results below the table describe the earlier index. The [subsequent three-topic retrieval update](RETRIEVAL.md) moved the turn-order holdout case to first place; its top-three result is now 8/8.
 
 The additional 26 cases were written before editing and then used to troubleshoot safeguards. The final holdout was not used to tune scores or routing. Of its five answerable questions without a direct answer, four offered the correct topic; the turn-order question about “swapping cards or putting down a road” missed it entirely. All eight unsupported or ambiguous holdout questions received no asserted ruling. The warm backend p95 on this machine was about 2 ms, excluding browser and network time.
 

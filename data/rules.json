@@ -123,7 +123,9 @@
       "What do I do on my turn?",
       "Remind me of the order of play",
       "What happens after I roll?",
-      "Turn sequence: roll for production, trade, then build."
+      "Turn sequence: roll for production, trade, then build.",
+      "Timing of trade versus construction: exchanging resource cards comes before placing a road, settlement or city.",
+      "The trade phase comes first; you can swap cards, then put a road on the board during the build phase."
     ]
   },
   {
@@ -350,7 +352,9 @@
     "answer": "A legal settlement can interrupt another player’s road. If the holder still ties for longest at 5 or more, they keep the card. If they fall behind and two others tie for longest, or nobody has 5, set the card aside until a sole qualifying leader emerges.",
     "queries": [
       "Can a settlement break my longest road?",
-      "What happens if a road is interrupted and the leaders tie?"
+      "What happens if a road is interrupted and the leaders tie?",
+      "A rival village cuts your continuous route in two. Recalculate the longest unbroken section to see who keeps the bonus.",
+      "Ownership of the Longest Road award after another player builds a settlement in the middle of the route."
     ]
   },
   {

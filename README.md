@@ -107,6 +107,8 @@ The builder fails if the PDF differs from the reviewed copy or an anchor is miss
 
 ## Run the checks
 
+To check **which rule chunks retrieval actually returns**, run `python -m tests.evaluate_retrieval`. See [retrieval quality: results, misses and how to add cases](tests/RETRIEVAL.md) for rank, source-page and strategy-prompt checks.
+
 ```sh
 python -m unittest discover -s tests
 python -m tests.evaluate
